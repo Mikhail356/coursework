@@ -1,0 +1,149 @@
+{
+    "debug": {
+        "description": "mf2py - microformats2 parser for python",
+        "markup parser": "html5lib",
+        "source": "https://github.com/microformats/mf2py",
+        "version": "1.1.2"
+    },
+    "items": [
+        {
+            "properties": {
+                "author": [
+                    {
+                        "properties": {
+                            "name": [
+                                "Tantek \u00c7elik"
+                            ],
+                            "photo": [
+                                "http://tantek.com/logo.jpg"
+                            ],
+                            "url": [
+                                "http://tantek.com/"
+                            ]
+                        },
+                        "type": [
+                            "h-card"
+                        ],
+                        "value": "Tantek \u00c7elik"
+                    }
+                ],
+                "content": [
+                    {
+                        "html": "* There\u2019s a balance between keeping things that reinforce who you are &amp; want to be (whether joyful, confident, etc.), strict necessity, utility, &amp; preparedness (years of fires &amp; smoke, and pandemic lockdowns taught us this), and efficiency &amp; resiliency.",
+                        "value": "* There\u2019s a balance between keeping things that reinforce who you are & want to be (whether joyful, confident, etc.), strict necessity, utility, & preparedness (years of fires & smoke, and pandemic lockdowns taught us this), and efficiency & resiliency."
+                    }
+                ],
+                "in-reply-to": [
+                    {
+                        "properties": {
+                            "name": [
+                                "@t\u2019s tweet"
+                            ],
+                            "url": [
+                                "https://twitter.com/t/status/1371160063365111808"
+                            ]
+                        },
+                        "type": [
+                            "h-cite"
+                        ],
+                        "value": "https://twitter.com/t/status/1371160063365111808"
+                    }
+                ],
+                "name": [
+                    "* There\u2019s a balance between keeping things that reinforce who you are & want to be (whether joyful, confident, etc.), strict necessity, utility, & preparedness (years of fires & smoke, and pandemic lockdowns taught us this), and efficiency & resiliency."
+                ],
+                "published": [
+                    "2021-03-14 11:03-0700"
+                ],
+                "syndication": [
+                    "https://twitter.com/t/status/1371160923474329603"
+                ],
+                "uid": [
+                    "https://tantek.com/2021/073/t8/balance-who-utility-resiliency"
+                ],
+                "updated": [
+                    "2021-03-14 11:03-0700"
+                ],
+                "url": [
+                    "https://tantek.com/2021/073/t8/balance-who-utility-resiliency"
+                ]
+            },
+            "type": [
+                "h-entry"
+            ]
+        }
+    ],
+    "rel-urls": {
+        "http://tantek.com/": {
+            "rels": [
+                "author",
+                "home"
+            ],
+            "text": "tantek.com",
+            "title": "Tantek \u00c7elik"
+        },
+        "http://tantek.com/2021/073/t7/spark-joy-not-answer": {
+            "rels": [
+                "prev"
+            ],
+            "text": "\u2190",
+            "title": "View the previous (older) item in the stream."
+        },
+        "http://tantek.com/logo.jpg": {
+            "rels": [
+                "icon"
+            ],
+            "text": ""
+        },
+        "http://webmention.io/tantek.com/webmention": {
+            "rels": [
+                "webmention"
+            ],
+            "text": ""
+        },
+        "https://tantek.com/2021/073/t8/balance-who-utility-resiliency": {
+            "rels": [
+                "canonical"
+            ],
+            "text": ""
+        },
+        "https://twitter.com/t/status/1371160063365111808": {
+            "rels": [
+                "in-reply-to"
+            ],
+            "text": "@t\u2019s tweet"
+        },
+        "https://twitter.com/t/status/1371160923474329603": {
+            "rels": [
+                "syndication"
+            ],
+            "text": "View \n      Conversation\n      on Twitter"
+        }
+    },
+    "rels": {
+        "author": [
+            "http://tantek.com/"
+        ],
+        "canonical": [
+            "https://tantek.com/2021/073/t8/balance-who-utility-resiliency"
+        ],
+        "home": [
+            "http://tantek.com/"
+        ],
+        "icon": [
+            "http://tantek.com/logo.jpg"
+        ],
+        "in-reply-to": [
+            "https://twitter.com/t/status/1371160063365111808"
+        ],
+        "prev": [
+            "http://tantek.com/2021/073/t7/spark-joy-not-answer"
+        ],
+        "syndication": [
+            "https://twitter.com/t/status/1371160923474329603"
+        ],
+        "webmention": [
+            "http://webmention.io/tantek.com/webmention"
+        ]
+    }
+}
