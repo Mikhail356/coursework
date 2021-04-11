@@ -1,0 +1,104 @@
+{
+    "items": [
+        {
+            "type": [
+                "h-card"
+            ],
+            "properties": {
+                "name": [
+                    "Кривчиков Максим Александрович"
+                ],
+                "honorific-suffix": [
+                    "Кандидат ф.-м. наук"
+                ],
+                "role": [
+                    "доцент кафедры вычислительной математики"
+                ]
+            }
+        },
+        {
+            "type": [
+                "h-istina-coauthors"
+            ],
+            "properties": {
+                "name": [
+                    "Соавторы:"
+                ]
+            },
+            "children": [
+                {
+                    "type": [
+                        "h-card"
+                    ],
+                    "properties": {
+                        "name": [
+                            "Васенин В. А."
+                        ],
+                        "url": [
+                            "http://127.0.0.1:8082/"
+                        ]
+                    }
+                },
+                {
+                    "type": [
+                        "h-card"
+                    ],
+                    "properties": {
+                        "name": [
+                            "Занчурин М. А."
+                        ],
+                        "url": [
+                            "http://127.0.0.1:8084/"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "type": [
+                "h-istina-publications"
+            ],
+            "properties": {
+                "name": [
+                    "Публикации:"
+                ]
+            },
+            "children": [
+                {
+                    "type": [
+                        "h-card"
+                    ],
+                    "properties": {
+                        "name": [
+                            "Промежуточное представление программ для описания типов в терминах сопоставления значений с образцом"
+                        ],
+                        "url": [
+                            "http://127.0.0.1:8081/p1.html"
+                        ]
+                    }
+                },
+                {
+                    "type": [
+                        "h-card"
+                    ],
+                    "properties": {
+                        "name": [
+                            "Архитектурно-технологические аспекты разработки и сопровождения больших информационно-аналитических систем в сфере науки и образования"
+                        ],
+                        "url": [
+                            "http://127.0.0.1:8081/p2.html"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "rels": {},
+    "rel-urls": {},
+    "debug": {
+        "description": "mf2py - microformats2 parser for python",
+        "source": "https://github.com/microformats/mf2py",
+        "version": "1.1.2",
+        "markup parser": "html5lib"
+    }
+}
