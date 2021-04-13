@@ -68,4 +68,5 @@ __Solid__ - это промежуточная итерация от изобре
 # Список литературы.
 1. https://www.w3.org/TR/webmention/
 2. https://www.w3.org/TR/websub/
-1. http://microformats.org/wiki/microformats2
+3. http://microformats.org/wiki/microformats2
+4. https://solidproject.org/
