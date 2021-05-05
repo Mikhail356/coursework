@@ -1,4 +1,0 @@
-127.0.0.1 - - [02/May/2021:21:20:25 +0300] "GET / HTTP/1.1" 200 1694 "" "python-requests/2.25.1"
-127.0.0.1 - - [02/May/2021:21:20:25 +0300] "GET / HTTP/1.1" 200 1694 "" "mf2py - microformats2 parser for python - version 1.1.2 - https://github.com/microformats/mf2py"
-127.0.0.1 - - [02/May/2021:21:24:20 +0300] "GET / HTTP/1.1" 200 1694 "" "python-requests/2.25.1"
-127.0.0.1 - - [02/May/2021:21:24:20 +0300] "GET / HTTP/1.1" 200 1694 "" "mf2py - microformats2 parser for python - version 1.1.2 - https://github.com/microformats/mf2py"
