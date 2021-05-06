@@ -46,7 +46,6 @@ with open(sys.argv[1]) as fp:
 
 # Проверка всех новых обращений к текущей странице
 # и добавление в список всех откликнувшихся страниц
-ss = soup.find_all(class_ = "p-name u-url")
 
   # Parsing url's wm-server 
 wm = soup.find_all('link')
@@ -74,34 +73,44 @@ for i in record:
       to_remove.append(i[1]) # for remove url on page
 
 # итоговые списки для изменения данных страницы это to_add to_remove
-#print('to_add', to_add, 'to_remove', to_remove, sep = '\n\n')
-step = soup.find(class_ = "h-istina-coauthors")
-#print(step.prettify)
-find = step.find_all(class_ = 'p-name u-url')
-#print(find, sep = '\n')
-#print(find[0]['href'], find[0].contents[0])
-#--------------------------------------------------------
-for i in to_add:
-  for j in find:
-    check = j.contents[0][0:-1]
-    if i[1] == check:
-      j['href'] = i[0]
-      break
-  else:
-    upd = find[-1].contents[0][0:-1]+','
-    find[-1].string = upd
-    add = bs4.BeautifulSoup('<span class=\"h-card\"></span>', 
-                            features = 'html5lib')
-    an = add.span
-    new_tag = add.new_tag("a", class_="p-name u-url", href = i[0])
-    an.append(new_tag)
-    add.span.a.string = i[1]+'.'
-    add.span.a.attrs = {'class':'p-name u-url', 
-                        'href': add.span.a.attrs['href']}
-    step.append(add.span)
-print('\n\n',step.prettify)
-print('--------------------------------------------------------')
-print(soup.find_all(class_ = "p-name u-url"))
+print('I want to change this part:','\t to_add:', to_add, 
+                                    '\t to_remove:', to_remove, 
+                                    sep = '\n')
+print("(Y/N):", end = ' ')
+ans = str(input()).lower()
+if(ans == 'y'):
+  step = soup.find(class_ = "h-istina-coauthors")
+  find = step.find_all(class_ = 'p-name u-url')
 
-  
-del record
+  if len(to_add) > 0:
+    for i in to_add:
+      for j in find:
+        check = j.contents[0][0:-1]
+        if i[1] == check:
+          j['href'] = i[0]
+          break
+      else:
+        upd = find[-1].contents[0][0:-1]+','
+        find[-1].string = upd
+        add = bs4.BeautifulSoup('<span class=\"h-card\"></span>', 
+                                features = 'html5lib')
+        an = add.span
+        new_tag = add.new_tag("a", class_="p-name u-url", href = i[0])
+        an.append(new_tag)
+        add.span.a.string = i[1]+'.'
+        add.span.a.attrs = {'class':'p-name u-url', 
+                            'href': add.span.a.attrs['href']}
+        step.append(add.span)
+
+  if len(to_remove) > 0:
+    find = step.find_all(class_ = 'p-name u-url')
+    for i in to_remove:
+      for j in find:
+        check = j.contents[0][0:-1]
+        if i[1] == check:
+          j['href'] = ' '
+          print(check, j.contents[0][0:-1], find)
+  print(soup.prettify(formatter='html5'))
+
+  with open(sys.argv[1], 'w') as fp:
+    fp.writelines(str(soup.prettify(formatter='html5')))
