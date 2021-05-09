@@ -1,7 +1,7 @@
 # Навигация по проекту (Курсовая 4 курс)
 
 ### Курсовая
-находится в папке __cw__
+находится в папке [cw](https://github.com/Mikhail356/coursework/tree/master/cw)
 #### Содержимое:
 1. __Введение__ - [intro.md](https://github.com/Mikhail356/coursework/blob/master/cw/intro.md)
 2. __Технологии построения децентрализованных Web-систем__ - [tech.md](https://github.com/Mikhail356/coursework/blob/master/cw/tech.md)
