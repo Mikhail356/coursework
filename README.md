@@ -11,7 +11,7 @@
 6. __Список литературы__ - [l_list.md](https://github.com/Mikhail356/coursework/blob/master/cw/l_list.md)
 
 ### Проект
-Раскидан на уровне [coursework](https://github.com/Mikhail356/coursework) каталогов и в [serv](https://github.com/Mikhail356/coursework/tree/master/serv)
+Раскидан на уровне [coursework](https://github.com/Mikhail356/coursework) и в каталоге [serv](https://github.com/Mikhail356/coursework/tree/master/serv)
 #### Запуск
 осуществляется путем "включения" скриптов [webmention-logger.py](https://github.com/Mikhail356/coursework/blob/master/webmention-logger.py) и [serv/start.sh](https://github.com/Mikhail356/coursework/blob/master/serv/start.sh)
 #### Работа с проектом
