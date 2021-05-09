@@ -9,3 +9,9 @@
 4. __Реализация макета децентрализованной системы__ - [real.md](https://github.com/Mikhail356/coursework/blob/master/cw/real.md)
 5. __Заключение__ - [end.md](https://github.com/Mikhail356/coursework/blob/master/cw/real.md)
 6. __Список литературы__ - [l_list.md](https://github.com/Mikhail356/coursework/blob/master/cw/l_list.md)
+
+### Проект
+#### Запуск
+осуществляется путем "включения" скриптов [webmention-logger.py](https://github.com/Mikhail356/coursework/blob/master/webmention-logger.py) и [serv/start.sh](https://github.com/Mikhail356/coursework/blob/master/serv/start.sh)
+#### Работа с проектом
+с помощью скриптов [upadte.py](https://github.com/Mikhail356/coursework/blob/master/update.py) и [check.py](https://github.com/Mikhail356/coursework/blob/master/check.py)
