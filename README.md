@@ -4,7 +4,7 @@
 находится в папке [cw](https://github.com/Mikhail356/coursework/tree/master/cw)
 #### Содержимое:
 1. __Введение__ - [intro.md](https://github.com/Mikhail356/coursework/blob/master/cw/intro.md)
-2. __Технологии построения децентрализованных Web-систем__ - [tech.md](https://github.com/Mikhail356/coursework/blob/master/cw/tech.md)
+2. __Технологии построения децентрализованных Web-систем__ - [tech.md](https://github.com/Mikhail356/coursework/blob/master/cw/tech.md) (пошаманить с ссылками, но вроде готово)
 3. __Математическая модель децентрализованной системы__ - [math.md](https://github.com/Mikhail356/coursework/blob/master/cw/math.md)
 4. __Реализация макета децентрализованной системы__ - [real.md](https://github.com/Mikhail356/coursework/blob/master/cw/real.md)
 5. __Заключение__ - [end.md](https://github.com/Mikhail356/coursework/blob/master/cw/real.md)
