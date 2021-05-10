@@ -2,9 +2,12 @@
 ___
 это раздел с детальным описание вашего проекта, включая содержимое файла README.
 
-в реализацию макета, в принципе, можно добавить листинги, но сильно их урезать, без import, разбора sys.argv и т.п., может быть даже без обработки ошибок — только суть
-___
+Да можно, в принципе, и без кода. По разметке можно небольшой фрагмент привести, чтобы было понятно, как microformats2 работают, вместе с результатом преобразования в json этого фрагмента.
 
+По поводу запуска скриптов и т.п. — по-хорошему, описание должно быть такое, чтобы человек, знакомый с командной строкой Unix, смог по содержимому вашего репозитория воспроизвести ваши результаты
+
+___
+Целиком рабочий проект можно найти в репозитории на GitHub [5].
 
 ## Основные рабочие объекты 
 1. Страница ученого - html страница содержащая информацию о ученом, его соавторах и публикациях.
@@ -31,25 +34,6 @@ ___
     1. URL Адрес целевой страницы.
 6. Вывод URL адресов обновленных страниц на экран.
 
-#### Код на языке программирования Python (упрощенный)
-```python
-try:
-  requests.get(sys.argv[1])
-except OSError:
-  print('Not correct url')
-  sys.exit()
-obj = mf2py.Parser(url=sys.argv[1]).to_dict()
-b = obj['items'][1]['children']
-l = len(b)
-for i in range(l):
-  t_url = b[i]['properties']['url'][0]
-  wm_serv = mf2py.Parser(url=t_url).to_dict()
-  wm_serv = wm_serv['rels']['webmention'][0]
-  requests.post(wm_serv, 
-                data = {'source' : sys.argv[1], 
-                        'target' : t_url})
-```
-
 ### Команда проверки (check)
 #### Кратко 
 На вход подается физический адрес .html файла страницы и ее URL адрес. Команда скачивает из БД свои запросы, появившиеся после последней проверки, и редактирует существующую страницу в соответствии с ними. Редактирование происходит путем добавления и удаления новых ученых, публикаций, ссылок. Используется после изменения ссылок внутри страницы.
@@ -70,109 +54,79 @@ for i in range(l):
 14. Записать в файл time время последнего обновления данной страницы.
 15. Вызвать команду update, описанную выше.
 
-#### Код на языке программирования Python (упрощенный)
-```python
-#----Проверка базы данных и составление списка кортежей из нее----
-db = sqlite3.connect('webmention-logger.sqlite')
-cursor = db.cursor()
-cursor.execute("SELECT * FROM webmentions")
-record = cursor.fetchall()
-cursor.close()
-
-# чтение файла с датой последней проверки
-s = sys.argv[1]
-s = s.split('/')
-way, i ='', 0
-while i != len(s)-1:
-  way += s[i]
-  way += '/'
-  i+=1
-way += 'd_check'
-
-with open(way, 'r+') as f:
-  datetime = f.readline()
-datetime = parse(datetime)
-
-#  подготовка таблицы
-for i in record:
-  if parse(i[3]) < datetime:
-    record.remove(i)
-
-
-with open(sys.argv[1]) as fp:
-    soup = bs4.BeautifulSoup(fp, features="html5lib")
-
-# Проверка всех новых обращений к текущей странице
-# и добавление в список всех откликнувшихся страниц
-
-# Поиск URL адреса WebMention сервера
-wm = soup.find_all('link')
-for i in wm:
-  if i['rel'][0] == 'webmention':
-    wm = i['href']
-    break
-else:
-  print('Who is webmention server?')
-  sys.exit()
-
-#"Разделение" обращений удаления и добавления
-cur_link = sys.argv[2]
-to_add, to_remove = [], []
-for i in record:
-  if i[2] == cur_link and 'http://'+i[-1] == wm:
-    try:
-      fil = requests.get(i[1])
-      fil.encoding = "html5lib"
-      tmp = bs4.BeautifulSoup(fil.text, features="html5lib")
-      tmp = tmp.title.text.split()
-      name = tmp[0]+' '+tmp[1][0]+'. '+tmp[2][0]+'.'
-      to_add.append((i[1], name))
-    except OSError:
-      to_remove.append(i[1])
-
-# итоговые списки для изменения данных страницы это to_add to_remove
-print('I want to change this part:','\t to_add:', to_add, 
-                                    '\t to_remove:', to_remove, 
-                                    sep = '\n')
-print("(Y/N):", end = ' ')
-ans = str(input()).lower()
-# Обработака ответа пользователя в соответствии с алгоритмом
-if(ans == 'y'):
-  step = soup.find(class_ = "h-istina-coauthors")
-  find = step.find_all(class_ = 'p-name u-url')
-
-  if len(to_add) > 0:
-    for i in to_add:
-      for j in find:
-        check = j.contents[0][0:-1]
-        if i[1] == check:
-          j['href'] = i[0]
-          break
-      else:
-        upd = find[-1].contents[0][0:-1]+','
-        find[-1].string = upd
-        add = bs4.BeautifulSoup('<span class=\"h-card\"></span>', 
-                                features = 'html5lib')
-        an = add.span
-        new_tag = add.new_tag("a", class_="p-name u-url", href = i[0])
-        an.append(new_tag)
-        add.span.a.string = i[1]+'.'
-        add.span.a.attrs = {'class':'p-name u-url', 
-                            'href': add.span.a.attrs['href']}
-        step.append(add.span)
-
-  if len(to_remove) > 0:
-    find = step.find_all(class_ = 'p-name u-url')
-    for i in to_remove:
-      for j in find:
-        check = j.contents[0][0:-1]
-        if i[1] == check:
-          j['href'] = ' '
-          print(check, j.contents[0][0:-1], find)
-  print(soup.prettify(formatter='html5'))
-
-  with open(sys.argv[1], 'w') as fp:
-    fp.writelines(str(soup.prettify(formatter='html5')))
-  with open(way, 'w') as f:
-    f.write(record[-1][3])
+## Работа с microformats2
+Пример разметки страницы с использованием microformats2.
+``` html 
+<!DOCTYPE HTML>
+<html>
+  <head>
+   <meta http-equiv="content-type" content="text/html" charset="utf-8">
+   <title>Кривчиков Максим Александрович</title>
+   <link rel="webmention" href="http://127.0.0.1:1234" />
+  </head>
+  <body>
+    <div class="h-card">
+      <a class="p-name">Кривчиков Максим Александрович</a>
+      <p>
+      <a class="p-honorific-suffix">Кандидат ф.-м. наук</a>,
+      <a class="p-role">доцент кафедры вычислительной математики</a>.
+      </p>
+    </div>
+   </body>
+</html>
 ```
+Ее разбор в json файле будет выглядеть так
+``` json 
+{
+    "items": [
+        {
+            "type": [
+                "h-card"
+            ],
+            "properties": {
+                "name": [
+                    "Кривчиков Максим Александрович"
+                ],
+                "honorific-suffix": [
+                    "Кандидат ф.-м. наук"
+                ],
+                "role": [
+                    "доцент кафедры вычислительной математики"
+                ]
+            }
+        }
+    ],
+    "rels": {
+        "webmention": [
+            "http://127.0.0.1:1234"
+        ]
+    },
+    "rel-urls": {
+        "http://127.0.0.1:1234": {
+            "text": "",
+            "rels": [
+                "webmention"
+            ]
+        }
+    },
+    "debug": {
+        "description": "mf2py - microformats2 parser for python",
+        "source": "https://github.com/microformats/mf2py",
+        "version": "1.1.2",
+        "markup parser": "html5lib"
+    }
+}
+```
+Видно что использован специальный микроформат h-card и его аргументы p-name, p-honorific-suffux, p-role для разметки информации. Примечательно, что все дочерние теги могут иметь любые имена после определенной приставки, как и описано в обзоре гехнологий построения распределенных Web систем.
+## Запуск макета
+Проект находится в GitHub репозитории [5].
+### Порядок запуска
+1. Скачать все необходимые python библиотеки : mf2py, mf2util, json, sys, requests, aiosqlite, sqlite3, bs4, а также версию python не ниже 3.
+2. Запустить команду start.sh (создает сервера при помощи darkhttpd), находится в папке serv.
+3. Запустить при помощи команды python3 webmention-logger.py WebMention сервер.
+
+После этих команд запустится несколько локальных серверов которые будут раздавать документы из соответствующих им папок. Так, например, содержимое папки serv/1 будет доступно по пути http://127.0.0.1:8081/ с добавлением соответствующего названия файла.
+
+Сейчас макет обрабатывает 2 ситуации:
+1. Пользователь решил обновить ссылки определенной страницы (например serv/1/index.html) в базе данных, тогда нужно ввести команду python3 update.py http://127.0.0.1:8081/index.html. 
+2. Пользователь хочет проверить действительны ли еще ссылки текущей страницы (serv/1/index.html) и нужно ли их дополнить новыми. Тогда нужно ввести команду python3 check.py serv/1/index.html http://127.0.0.1:8081/index.html. В ходе работы нужно будет подтвердить или отвергнуть изменения текущей страницы.
