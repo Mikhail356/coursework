@@ -18,4 +18,4 @@
 
 [@locate] Adriana Iamnitchi, Matei Ripeanu, Ian Foster. Locating Data in (Small-World?) Peer-to-Peer Scientific Collaborations. 2002. URL: https://arxiv.org/pdf/cs/0209031.pdf
 
-[@struct]Mark Newman. The Structure and Function of Complex Networks. 2003. https://epubs.siam.org/doi/pdf/10.1137/S003614450342480?xid=PS_smithsonian
+[@struct] Mark Newman. The Structure and Function of Complex Networks. 2003. https://epubs.siam.org/doi/pdf/10.1137/S003614450342480?xid=PS_smithsonian
