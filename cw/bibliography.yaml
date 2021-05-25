@@ -1,0 +1,20 @@
+references:
+- id: towards
+  type: article-collection
+  title: Towards a Decentralized Process for Scientific Publication and Peer Review using Blockchain and IPFS
+  container-title: 52nd Hawaii International Conference on System Sciences
+  author:
+    - family: Tenorio-Fornés
+      given: Antonio
+    - family: Jacynycz
+      given: Viktor
+    - family: Llop-Vila
+      given: David
+    - family: Sánchez-Ruiz
+      given: Antonio
+    - family: Hassan
+      given: Samer
+  url: https://scholarspace.manoa.hawaii.edu/bitstream/10125/59901/1/0461.pdf
+  page: 4635-4644 
+  issued:
+    - year: 2009
