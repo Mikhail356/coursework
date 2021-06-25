@@ -1,20 +1,168 @@
+---
 references:
-- id: towards
-  type: article-collection
-  title: Towards a Decentralized Process for Scientific Publication and Peer Review using Blockchain and IPFS
-  container-title: 52nd Hawaii International Conference on System Sciences
+- id: wm
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
   author:
-    - family: Tenorio-Fornés
-      given: Antonio
-    - family: Jacynycz
-      given: Viktor
-    - family: Llop-Vila
-      given: David
-    - family: Sánchez-Ruiz
-      given: Antonio
-    - family: Hassan
-      given: Samer
-  url: https://scholarspace.manoa.hawaii.edu/bitstream/10125/59901/1/0461.pdf
-  page: 4635-4644 
+    - literal: Aaron Parecki
+  container-title: Webmention
+  genre: Некоммерческий сайт
+  language: en
+  title: Webmention
+  title-short: Webmention
+  type: webpage
+  URL: https://www.w3.org/TR/webmention/#title
+
+- id: towards
+  event: Proceedings of the 52nd Hawaii International Conference on System Sciences
+  ISBN: 978-0-9981331-2-6
   issued:
-    - year: 2009
+    - year: 2019
+  language: en
+  publisher: HICSS
+  title: >-
+    Towards a Decentralized Process for Scientiﬁc Publication and Peer Review
+    using Blockchain and IPFS
+  type: paper-conference
+  URL: https://scholarspace.manoa.hawaii.edu/bitstream/10125/59901/1/0461.pdf
+
+- id: ether
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
+  author:
+    - family: Buterin
+      given: Vitalik
+  issued:
+    - year: 2013
+  language: en
+  publisher: ethereum.org
+  source: Zotero
+  title: A NEXT GENERATION SMART CONTRACT & DECENTRALIZED APPLICATION PLATFORM
+  title-short: Ethereum White Paper
+  type: article
+  URL: https://cryptorating.eu/whitepapers/Ethereum/Ethereum_white_paper.pdf
+
+- id: cw
+  accessed:
+    - year: 2021
+      month: 6
+      day: 25
+  genre: HTML, Python3, Tex, Nix, Shell
+  issued:
+    - year: 2021
+      month: 4
+      day: 10
+  original-date:
+    - year: 2021
+      month: 3
+      day: 15
+  source: GitHub
+  title: Coursework
+  type: webpage
+  URL: https://github.com/Mikhail356/coursework
+
+- id: locate
+  accessed:
+    - year: 2021
+      month: 6
+      day: 25
+  author:
+    - family: Iamnitchi
+      given: Adriana
+    - family: Ripeanu
+      given: Matei
+    - family: Foster
+      given: Ian
+  container-title: Locating Data in (Small-World?) Peer-to-Peer Scientific Collaborations
+  issued:
+    - year: 2002
+      month: 9
+  language: en
+  title: Locating Data in (Small-World?) Peer-to-Peer Scientific Collaborations
+  type: article-journal
+  URL: http://arxiv.org/abs/cs/0209031
+
+- id: ws
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
+  author:
+    - literal: Julien Genestoux
+  container-title: WebSub
+  genre: Некоммерческий сайт
+  language: en
+  title: WebSub
+  title-short: WebSub
+  type: webpage
+  URL: https://www.w3.org/TR/websub/
+
+- id: decentr
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
+  author:
+    - family: Kirichek
+      given: Galina
+    - family: Tymoshenko
+      given: Volodymyr
+    - family: Rudkovskyi
+      given: Oleksii
+    - family: Hrushko
+      given: Svitlana
+  container-title: Decentralized system for run services
+  language: en
+  page: '13'
+  source: Zotero
+  title: Decentralized system for run services
+  type: article-journal
+  URL: http://ceur-ws.org/Vol-2353/paper68.pdf
+
+- id: mf2
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
+  container-title: microformats2
+  genre: Некоммерческий сайт
+  language: en
+  title: microformats2 - Microformats Wiki
+  type: webpage
+  URL: http://microformats.org/wiki/microformats2
+
+- id: struct
+  accessed:
+    - year: 2021
+      month: 6
+      day: 25
+  author:
+    - family: Newman
+      given: M. E. J.
+  edition: SIAM REVIEW
+  issued:
+    - year: 2003
+      month: 1
+  language: en
+  page: 167-256
+  publisher: Society for Industrial and Applied Mathematics
+  source: DOI.org (Crossref)
+  title: The Structure and Function of Complex Networks
+  type: chapter
+  URL: http://epubs.siam.org/doi/10.1137/S003614450342480
+
+- id: solid
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
+  container-title: Home. Solid
+  language: en
+  title: Solid
+  type: webpage
+  URL: https://solidproject.org/
+...
