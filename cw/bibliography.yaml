@@ -16,6 +16,10 @@ references:
   URL: https://www.w3.org/TR/webmention/#title
 
 - id: towards
+  accessed:
+    - year: 2021
+      month: 4
+      day: 10
   event: Proceedings of the 52nd Hawaii International Conference on System Sciences
   ISBN: 978-0-9981331-2-6
   issued:
@@ -49,9 +53,8 @@ references:
 - id: cw
   accessed:
     - year: 2021
-      month: 6
+      month: 4
       day: 25
-  genre: HTML, Python3, Tex, Nix, Shell
   issued:
     - year: 2021
       month: 4
@@ -60,15 +63,23 @@ references:
     - year: 2021
       month: 3
       day: 15
-  source: GitHub
   title: Coursework
   type: webpage
   URL: https://github.com/Mikhail356/coursework
 
+- id: foaf
+  accessed:
+    - year: 2021
+      month: 4
+      day: 26
+  title: The FOAF Project
+  type: webpage
+  URL: http://www.foaf-project.org/
+
 - id: locate
   accessed:
     - year: 2021
-      month: 6
+      month: 4
       day: 25
   author:
     - family: Iamnitchi
@@ -123,6 +134,16 @@ references:
   type: article-journal
   URL: http://ceur-ws.org/Vol-2353/paper68.pdf
 
+- id: ldp
+  accessed:
+    - year: 2021
+      month: 4
+      day: 26
+  language: en
+  title: Linked Data Platform 1.0
+  type: webpage
+  URL: https://www.w3.org/TR/ldp/
+
 - id: mf2
   accessed:
     - year: 2021
@@ -138,7 +159,7 @@ references:
 - id: struct
   accessed:
     - year: 2021
-      month: 6
+      month: 4
       day: 25
   author:
     - family: Newman
@@ -155,6 +176,15 @@ references:
   type: chapter
   URL: http://epubs.siam.org/doi/10.1137/S003614450342480
 
+- id: rdfs
+  accessed:
+    - year: 2021
+      month: 4
+      day: 26
+  title: RDF Schema 1.1
+  type: webpage
+  URL: https://www.w3.org/TR/rdf-schema/
+
 - id: solid
   accessed:
     - year: 2021
@@ -165,4 +195,22 @@ references:
   title: Solid
   type: webpage
   URL: https://solidproject.org/
+
+- id: vcard
+  accessed:
+    - year: 2021
+      month: 4
+      day: 26
+  title: vCard Ontology - for describing People and Organizations
+  type: webpage
+  URL: https://www.w3.org/TR/vcard-rdf/
+
+- id: html
+  accessed:
+    - year: 2021
+      month: 4
+      day: 26
+  title: W3C HTML
+  type: webpage
+  URL: https://www.w3.org/html/
 ...
